@@ -22,7 +22,7 @@
         "psr-0": { "Ekyna\\FontAwesomeBundle": "" }
     },
     "minimum-stability": "dev",
-    "target-dir": "Ekyna/FontAwesome",
+    "target-dir": "Ekyna/FontAwesomeBundle",
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"

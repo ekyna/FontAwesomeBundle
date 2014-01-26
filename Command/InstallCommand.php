@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is part of EkynaFontAwesomeBundle.
+ *
+ * (c) 2013-2014 by Étienne Dauvergne
+ */
 
 namespace Ekyna\FontAwesomeBundle\Command;
 
@@ -69,7 +74,6 @@ class InstallCommand extends ContainerAwareCommand
      */
     protected function getSrcDir()
     {
-        //return sprintf('%s/fonts', $this->getContainer()->getParameter('braincrafted_bootstrap.assets_dir'));
         return sprintf('%s/fonts', $this->getContainer()->getParameter('ekyna_fontawesome.assets_dir'));
     }
 

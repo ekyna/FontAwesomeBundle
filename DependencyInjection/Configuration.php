@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is part of EkynaFontAwesomeBundle.
+ *
+ * (c) 2013-2014 by Étienne Dauvergne
+ */
 
 namespace Ekyna\FontAwesomeBundle\DependencyInjection;
 
@@ -6,9 +11,14 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * This is the class that validates and merges configuration from your app/config files
+ * Configuration
  *
- * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html#cookbook-bundles-extension-config-class}
+ * @package    EkynaFontAwesomeBundle
+ * @subpackage DependencyInjection
+ * @author     Étienne Dauvergne <contact@ekyna.com>
+ * @copyright  2013-2014 Étienne Dauvergne
+ * @license    http://opensource.org/licenses/MIT The MIT License
+ * @link       https://github.com/ekyna/FontAwesomeBundle FontAwesome for Symfony2
  */
 class Configuration implements ConfigurationInterface
 {
@@ -22,9 +32,14 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('output_dir')->defaultValue('')->end()
+                ->scalarNode('output_dir')
+                    ->defaultValue('')
+                ->end()
                 ->scalarNode('assets_dir')
                     ->defaultValue('%kernel.root_dir%/../vendor/fortawesome/font-awesome')
+                ->end()
+                ->booleanNode('configure_assetic')
+                    ->defaultValue(true)
                 ->end()
             ->end();
 
