@@ -5,7 +5,7 @@
  * (c) 2013-2014 by Étienne Dauvergne
  */
 
-namespace Ekyna\FontAwesomeBundle\DependencyInjection;
+namespace Ekyna\Bundle\FontAwesomeBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

@@ -5,7 +5,7 @@
  * (c) 2013-2014 by Étienne Dauvergne
  */
 
-namespace Ekyna\FontAwesomeBundle\DependencyInjection;
+namespace Ekyna\Bundle\FontAwesomeBundle\DependencyInjection;
 
 /**
  * AsseticConfiguration
@@ -70,7 +70,7 @@ class AsseticConfiguration
      *
      * @return array
      */
-    protected function buildCssWithLess(array $config)
+    /*protected function buildCssWithLess(array $config)
     {
         $bootstrapFile = $config['assets_dir'].'/less/font-awesome.less';
         if (true === isset($config['customize']['variables_file']) &&
@@ -83,5 +83,5 @@ class AsseticConfiguration
             'filters' => array($config['less_filter']),
             'output'  => $config['output_dir'].'css/font-awesome.css'
         );
-    }
+    }*/
 }

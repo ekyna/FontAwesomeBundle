@@ -5,7 +5,7 @@
  * (c) 2013-2014 by Étienne Dauvergne
  */
 
-namespace Ekyna\FontAwesomeBundle;
+namespace Ekyna\Bundle\FontAwesomeBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

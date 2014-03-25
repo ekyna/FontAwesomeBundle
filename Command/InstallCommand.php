@@ -5,7 +5,7 @@
  * (c) 2013-2014 by Étienne Dauvergne
  */
 
-namespace Ekyna\FontAwesomeBundle\Command;
+namespace Ekyna\Bundle\FontAwesomeBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;

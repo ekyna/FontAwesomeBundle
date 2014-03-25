@@ -5,12 +5,10 @@
  * (c) 2013-2014 by Étienne Dauvergne
  */
 
-namespace Ekyna\FontAwesomeBundle\DependencyInjection;
+namespace Ekyna\Bundle\FontAwesomeBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
-use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
 /**

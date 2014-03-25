@@ -1,31 +1,36 @@
 {
-    "name": "ekyna/fontawesome-bundle",
-    "type": "symfony-bundle",
-    "description": "FontAwesome Symfony2 integration",
-    "keywords": ["symfony2", "fontawesome", "bundle"],
-    "homepage": "https://github.com/ekyna/FontAwesomeBundle",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Etienne Dauvergne",
-            "homepage": "http://ekyna.com"
-        }
-    ],
-    "require": {
-        "php": ">=5.3.3",
-        "symfony/framework-bundle": "~2.1",
-        "FortAwesome/Font-Awesome": "*"
-    },
-    "require-dev": {
-    },
-    "autoload": {
-        "psr-0": { "Ekyna\\FontAwesomeBundle": "" }
-    },
-    "minimum-stability": "dev",
-    "target-dir": "Ekyna/FontAwesomeBundle",
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.1.x-dev"
-        }
-    }
+	"name" : "ekyna/fontawesome-bundle",
+	"description" : "FontAwesome Symfony2 integration",
+	"type" : "symfony-bundle",
+	"authors" : [{
+			"name" : "Etienne Dauvergne",
+			"homepage" : "http://ekyna.com"
+		}
+	],
+	"keywords" : [
+		"symfony2",
+		"fontawesome",
+		"bundle"
+	],
+	"homepage" : "https://github.com/ekyna/FontAwesomeBundle",
+	"license" : [
+		"MIT"
+	],
+	"require" : {
+		"php" : ">=5.3.3",
+		"symfony/framework-bundle" : "~2.1",
+		"FortAwesome/Font-Awesome" : "*"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"Ekyna\\FontAwesomeBundle" : ""
+		}
+	},
+	"target-dir" : "Ekyna/Bundle/FontAwesomeBundle",
+	"minimum-stability" : "dev",
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "0.1.x-dev"
+		}
+	}
 }

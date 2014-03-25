@@ -53,7 +53,7 @@ Use in a twig template:
 ```twig
 {% stylesheets output='css/backend.css' filter='cssrewrite, ?yui_css'
     ...
-    '@fontawesome_css'
+    'css/fontawesome.css'
     ...
 %}
     <link href="{{ asset_url }}" rel="stylesheet" type="text/css" />
