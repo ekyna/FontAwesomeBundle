@@ -13,16 +13,21 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOException;
+use Symfony\Component\Console\Input\InputArgument;
 
 class InstallCommand extends ContainerAwareCommand
 {
+    private $basePath;
+
     /**
      * {@inheritDoc}
      */
     protected function configure()
     {
-        $this->setName('ekyna:fontawesome:install')
-            ->setDescription('Installs the FontAwesome icon fonts');
+        $this
+            ->setName('ekyna:fontawesome:install')
+            ->setDescription('Installs the FontAwesome icon fonts')
+            ->addArgument('write_to', InputArgument::OPTIONAL, 'Override the configured asset root');
     }
 
     /**
@@ -30,6 +35,8 @@ class InstallCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->basePath = $input->getArgument('write_to') ?: $this->getContainer()->getParameter('assetic.write_to');
+
         $destDir = $this->getDestDir();
 
         $finder = new Finder;
@@ -88,8 +95,8 @@ class InstallCommand extends ContainerAwareCommand
         }
 
         return sprintf(
-            '%s/../web/%sfonts',
-            $this->getContainer()->getParameter('kernel.root_dir'),
+            '%s/%sfonts',
+            rtrim($this->basePath, '/'),
             $outputDir
         );
     }
