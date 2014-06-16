@@ -1,9 +1,4 @@
 <?php
-/**
- * This file is part of EkynaFontAwesomeBundle.
- *
- * (c) 2013-2014 by Étienne Dauvergne
- */
 
 namespace Ekyna\Bundle\FontAwesomeBundle\Command;
 
@@ -15,6 +10,11 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Console\Input\InputArgument;
 
+/**
+ * InstallCommand.
+ *
+ * @author Étienne Dauvergne <contact@ekyna.com>
+ */
 class InstallCommand extends ContainerAwareCommand
 {
     private $basePath;
