@@ -60,7 +60,7 @@ class AsseticConfiguration
         return array(
             'inputs'  => $inputs,
             'filters' => array('cssrewrite'),
-            'output'  => $config['output_dir'].'css/font-awesome.css',
+            'output'  => $config['output_dir'].'css/fontawesome.css',
             'debug'   => false
         );
     }
