@@ -7,8 +7,8 @@ use Symfony\Component\Process\PhpExecutableFinder;
 use Composer\Script\CommandEvent;
 
 /**
- * ScriptHandler.
- *
+ * Class ScriptHandler
+ * @package Ekyna\Bundle\FontAwesomeBundle\Composer
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class ScriptHandler
@@ -24,8 +24,8 @@ class ScriptHandler
 
         if (!is_dir($consolePath)) {
             printf(
-                'The %s (%s) specified in composer.json was not found in %s, can not build bootstrap '.
-                'file.%s',
+                'The %s (%s) specified in composer.json was not found in %s, can not install fontawesome '.
+                'files.%s',
                 $consolePathOptionsKey,
                 $consolePath,
                 getcwd(),

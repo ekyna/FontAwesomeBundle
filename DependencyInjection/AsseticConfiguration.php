@@ -2,9 +2,10 @@
 
 namespace Ekyna\Bundle\FontAwesomeBundle\DependencyInjection;
 
+
 /**
- * AsseticConfiguration.
- *
+ * Class AsseticConfiguration
+ * @package Ekyna\Bundle\FontAwesomeBundle\DependencyInjection
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class AsseticConfiguration
@@ -13,7 +14,6 @@ class AsseticConfiguration
      * Builds the assetic configuration.
      *
      * @param array $config
-     *
      * @return array
      */
     public function build(array $config)
@@ -38,7 +38,6 @@ class AsseticConfiguration
 
     /**
      * @param array $config
-     *
      * @return array
      */
     protected function buildCssWithoutLess(array $config)
@@ -57,7 +56,6 @@ class AsseticConfiguration
 
     /**
      * @param array $config
-     *
      * @return array
      */
     /*protected function buildCssWithLess(array $config)

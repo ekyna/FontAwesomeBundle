@@ -11,12 +11,13 @@ use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Console\Input\InputArgument;
 
 /**
- * InstallCommand.
- *
+ * Class InstallCommand
+ * @package Ekyna\Bundle\FontAwesomeBundle\Command
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class InstallCommand extends ContainerAwareCommand
 {
+    private $config;
     private $basePath;
 
     /**
@@ -35,6 +36,7 @@ class InstallCommand extends ContainerAwareCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->config = $this->getContainer()->getParameter('ekyna_fontawesome.config');
         $this->basePath = $input->getArgument('write_to') ?: $this->getContainer()->getParameter('assetic.write_to');
 
         $destDir = $this->getDestDir();
@@ -81,7 +83,7 @@ class InstallCommand extends ContainerAwareCommand
      */
     protected function getSrcDir()
     {
-        return sprintf('%s/fonts', $this->getContainer()->getParameter('ekyna_fontawesome.assets_dir'));
+        return sprintf('%s/fonts', $this->config['assets_dir']);
     }
 
     /**
@@ -89,7 +91,7 @@ class InstallCommand extends ContainerAwareCommand
      */
     protected function getDestDir()
     {
-        $outputDir = $this->getContainer()->getParameter('ekyna_fontawesome.output_dir');
+        $outputDir = $this->config['output_dir'];
         if (strlen($outputDir) > 0 && '/' !== substr($outputDir, -1)) {
             $outputDir .= '/';
         }

@@ -7,8 +7,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
 /**
- * EkynaFontAwesomeExtension.
- *
+ * Class EkynaFontAwesomeExtension
+ * @package Ekyna\Bundle\FontAwesomeBundle\DependencyInjection
  * @author Étienne Dauvergne <contact@ekyna.com>
  */
 class EkynaFontAwesomeExtension extends Extension implements PrependExtensionInterface
@@ -21,9 +21,7 @@ class EkynaFontAwesomeExtension extends Extension implements PrependExtensionInt
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
-        $container->setParameter('ekyna_fontawesome.output_dir', $config['output_dir']);
-        $container->setParameter('ekyna_fontawesome.assets_dir', $config['assets_dir']);
-        $container->setParameter('ekyna_fontawesome.configure_assetic', $config['configure_assetic']);
+        $container->setParameter('ekyna_fontawesome.config', $config);
     }
 
     /**
@@ -32,11 +30,10 @@ class EkynaFontAwesomeExtension extends Extension implements PrependExtensionInt
     public function prepend(ContainerBuilder $container)
     {
         $bundles = $container->getParameter('kernel.bundles');
-
         $configs = $container->getExtensionConfig($this->getAlias());
         $config = $this->processConfiguration(new Configuration(), $configs);
 
-        if (true === isset($bundles['AsseticBundle']) && true === $config['configure_assetic']) {
+        if (array_key_exists('AsseticBundle', $bundles) && $config['configure_assetic']) {
             $this->configureAsseticBundle($container, $config);
         }
     }
@@ -49,16 +46,10 @@ class EkynaFontAwesomeExtension extends Extension implements PrependExtensionInt
      */
     protected function configureAsseticBundle(ContainerBuilder $container, array $config)
     {
-        foreach (array_keys($container->getExtensions()) as $name) {
-            switch ($name) {
-                case 'assetic':
-                    $asseticConfig = new AsseticConfiguration;
-                    $container->prependExtensionConfig(
-                        $name,
-                        array('assets' => $asseticConfig->build($config))
-                    );
-                    break;
-            }
-        }
+        $asseticConfig = new AsseticConfiguration;
+        $container->prependExtensionConfig('assetic', array(
+            'bundles' => array('EkynaFileManagerBundle'),
+            'assets' => $asseticConfig->build($config),
+        ));
     }
 }
