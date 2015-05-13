@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('ekyna_fontawesome');
+        $rootNode = $treeBuilder->root('ekyna_font_awesome');
 
         $rootNode
             ->children()
