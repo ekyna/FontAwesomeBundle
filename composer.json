@@ -22,11 +22,10 @@
 		"fortawesome/font-awesome" : "*"
 	},
 	"autoload" : {
-		"psr-0" : {
-			"Ekyna\\Bundle\\FontAwesomeBundle" : ""
+		"psr-4" : {
+			"Ekyna\\Bundle\\FontAwesomeBundle\\" : ""
 		}
 	},
-	"target-dir" : "Ekyna/Bundle/FontAwesomeBundle",
 	"extra" : {
 		"branch-alias" : {
 			"dev-master" : "0.3.x-dev"
