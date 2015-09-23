@@ -47,8 +47,8 @@ class EkynaFontAwesomeExtension extends Extension implements PrependExtensionInt
     protected function configureAsseticBundle(ContainerBuilder $container, array $config)
     {
         $asseticConfig = new AsseticConfiguration;
-        $container->prependExtensionConfig('assetic', array(
+        $container->prependExtensionConfig('assetic', [
             'assets' => $asseticConfig->build($config),
-        ));
+        ]);
     }
 }

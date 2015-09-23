@@ -18,7 +18,7 @@ class AsseticConfiguration
      */
     public function build(array $config)
     {
-        $output = array();
+        $output = [];
 
         // Fix path in output dir
         if ('/' !== substr($config['output_dir'], -1) && strlen($config['output_dir']) > 0) {
@@ -42,16 +42,16 @@ class AsseticConfiguration
      */
     protected function buildCssWithoutLess(array $config)
     {
-        $inputs = array(
+        $inputs = [
             $config['assets_dir'].'/css/font-awesome.css',
-        );
+        ];
 
-        return array(
+        return [
             'inputs'  => $inputs,
-            'filters' => array('cssrewrite'),
+            'filters' => ['cssrewrite'],
             'output'  => $config['output_dir'].'css/fontawesome.css',
             'debug'   => false
-        );
+        ];
     }
 
     /**

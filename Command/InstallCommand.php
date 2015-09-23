@@ -63,8 +63,9 @@ class InstallCommand extends ContainerAwareCommand
 
             return;
         }
-        $finder->files()->in($srcDir);
 
+        $finder->files()->in($srcDir);
+        /** @var \SplFileInfo $file */
         foreach ($finder as $file) {
             $dest = sprintf('%s/%s', $destDir, $file->getBaseName());
             try {
